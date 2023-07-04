@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active {
+  @apply bg-gray-600 text-white py-1 px-2 rounded-md uppercase transition-all;
+}
