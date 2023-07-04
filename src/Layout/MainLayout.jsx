@@ -8,6 +8,7 @@ const MainLayout = () => {
       {/* <Navbar /> */}
       <Navbar />
       <Navbar />
+      <Navbar />
       <div className="container lg:w-[80%] mx-auto">
         <Outlet />
       </div>
