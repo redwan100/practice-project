@@ -1,6 +1,8 @@
 import { useReducer } from "react";
+import { useUser } from "../../Context/UserProvider";
 
 const Form = () => {
+ 
   const initialState = {
     name: "",
     email: "",
@@ -233,6 +235,9 @@ const Form = () => {
           </button>
         </div>
       </form>
+
+      <hr />
+     
     </div>
   );
 };

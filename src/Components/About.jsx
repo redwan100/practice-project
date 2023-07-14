@@ -1,8 +1,21 @@
+import React from "react";
+import { useUser } from "../Context/UserProvider";
 
 const About = () => {
-  return (
-    <div>About</div>
-  )
-}
+  const {
+    state: { users, loading, error },
+  } = useUser();
 
-export default About
+  return (
+    <div>
+      {loading ? (
+        <p>Loading</p>
+      ) : (
+        users.map((item) => <p key={item.id}>{item.name}</p>)
+      )}
+      {error || null}
+    </div>
+  );
+};
+
+export default About;
