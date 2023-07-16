@@ -24,6 +24,9 @@ const Navbar = () => {
       <li>
         <NavLink to="/topRated">Top Rated</NavLink>
       </li>
+      <li>
+        <NavLink to="/counter">Counter</NavLink>
+      </li>
     </>
   );
   return (

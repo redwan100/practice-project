@@ -6,6 +6,7 @@ import SignUp from "../Components/Form/SignUp";
 import SignIn from "../Components/Form/SignIn";
 import TopRated from "../Components/TopRated";
 import About from "../Components/About";
+import Counter from "../Pages/Counter/Counter";
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
       {
         path: "sign-in",
         element: <SignIn />,
+      },
+      {
+        path: "counter",
+        element: <Counter />,
       },
     ],
   },
