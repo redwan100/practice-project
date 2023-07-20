@@ -1,8 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../mainLayout/MainLayout";
 import App from "../App";
-import ShowBook from "../features/books/BookView";
-import AddBook from "../features/books/AddBook";
+import PostView from "../features/posts/PostView";
+import PostDetail from "../features/posts/PostDetail";
+import CartView from "../features/cart/CartView";
 
 const router = createBrowserRouter([
   {
@@ -14,12 +15,16 @@ const router = createBrowserRouter([
         element: <App />,
       },
       {
-        path: "show-book",
-        element: <ShowBook />,
+        path: "postView",
+        element: <PostView />,
       },
       {
-        path: "add-book",
-        element: <AddBook />,
+        path: "postDetail/:id",
+        element: <PostDetail />,
+      },
+      {
+        path: "cart",
+        element: <CartView />,
       },
     ],
   },
