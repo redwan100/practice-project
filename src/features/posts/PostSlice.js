@@ -8,21 +8,23 @@ const initialPostsState = {
   error: null,
 };
 
+// TODO: replace http://localhost:5000/products
+
 export const dataFetch = createAsyncThunk("posts/dataFetch", async () => {
-  const result = await axios.get("https://jsonplaceholder.typicode.com/posts");
+  const result = await axios.get("http://localhost:5000/products");
   return result.data;
 });
 
+// TODO: replace with id http://localhost:5000/products
 export const postDetail = createAsyncThunk("posts/postDetail", async (id) => {
-  const result = await axios.get(
-    `https://jsonplaceholder.typicode.com/posts/${id}`
-  );
+  const result = await axios.get(`http://localhost:5000/product/${id}`);
   return result.data;
 });
 
+// TODO: replace http://localhost:5000/products
 export const postDelete = createAsyncThunk("posts/postDelete", async (id) => {
   const result = await axios.delete(
-    `https://jsonplaceholder.typicode.com/posts/${id}`
+    `http://localhost:5000/product_delete/${id}`
   );
   return result.data;
 });
@@ -63,8 +65,14 @@ const PostSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(postDelete.fulfilled, (state, action) => {
+      const id = action.payload;
+      console.log(action.payload.deletedCount);
       state.isLoading = false;
-      state.posts = state.posts.filter((item) => item.id !== action.payload);
+
+      state.posts =
+        action.deletedCount > 0
+          ? state.posts.filter((item) => item._id !== id)
+          : state.posts;
       state.error = null;
     });
     builder.addCase(postDelete.rejected, (state, action) => {
