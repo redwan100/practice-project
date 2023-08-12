@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { dataFetch, postDelete } from "./PostSlice";
 import { Link } from "react-router-dom";
 import { addToCart } from "../cart/CartSlice";
+import Loading from "../../components/Loading";
 
 const PostView = () => {
   const dispatch = useDispatch();
@@ -27,7 +28,7 @@ const PostView = () => {
       <div>
         <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {isLoading ? (
-            <p>Loading...</p>
+            <Loading />
           ) : (
             posts.map((post) => (
               <div
@@ -76,69 +77,3 @@ const PostView = () => {
 
 export default PostView;
 
-const a = [
-  {
-    name: "product 5",
-    img: "https://images.pexels.com/photos/3802602/pexels-photo-3802602.jpeg?auto=compress&cs=tinysrgb&w=600",
-  },
-  {
-    name: "product 7",
-    img: "https://images.pexels.com/photos/4158/apple-iphone-smartphone-desk.jpg?auto=compress&cs=tinysrgb&w=600",
-  },
-  {
-    name: "product 9",
-    img: "https://images.pexels.com/photos/50924/pexels-photo-50924.jpeg?auto=compress&cs=tinysrgb&w=600",
-  },
-  {
-    name: "product 12",
-    img: "https://images.pexels.com/photos/4158/apple-iphone-smartphone-desk.jpg?auto=compress&cs=tinysrgb&w=600",
-  },
-  {
-    name: "product 5",
-    img: "https://images.pexels.com/photos/3802602/pexels-photo-3802602.jpeg?auto=compress&cs=tinysrgb&w=600",
-  },
-  {
-    name: "product 7",
-    img: "https://images.pexels.com/photos/4158/apple-iphone-smartphone-desk.jpg?auto=compress&cs=tinysrgb&w=600",
-  },
-  {
-    name: "product 9",
-    img: "https://images.pexels.com/photos/50924/pexels-photo-50924.jpeg?auto=compress&cs=tinysrgb&w=600",
-  },
-  {
-    name: "product 12",
-    img: "https://images.pexels.com/photos/4158/apple-iphone-smartphone-desk.jpg?auto=compress&cs=tinysrgb&w=600",
-  },
-  {
-    name: "product 5",
-    img: "https://images.pexels.com/photos/3802602/pexels-photo-3802602.jpeg?auto=compress&cs=tinysrgb&w=600",
-  },
-  {
-    name: "product 7",
-    img: "https://images.pexels.com/photos/4158/apple-iphone-smartphone-desk.jpg?auto=compress&cs=tinysrgb&w=600",
-  },
-  {
-    name: "product 9",
-    img: "https://images.pexels.com/photos/50924/pexels-photo-50924.jpeg?auto=compress&cs=tinysrgb&w=600",
-  },
-  {
-    name: "product 12",
-    img: "https://images.pexels.com/photos/4158/apple-iphone-smartphone-desk.jpg?auto=compress&cs=tinysrgb&w=600",
-  },
-  {
-    name: "product 5",
-    img: "https://images.pexels.com/photos/3802602/pexels-photo-3802602.jpeg?auto=compress&cs=tinysrgb&w=600",
-  },
-  {
-    name: "product 7",
-    img: "https://images.pexels.com/photos/4158/apple-iphone-smartphone-desk.jpg?auto=compress&cs=tinysrgb&w=600",
-  },
-  {
-    name: "product 9",
-    img: "https://images.pexels.com/photos/50924/pexels-photo-50924.jpeg?auto=compress&cs=tinysrgb&w=600",
-  },
-  {
-    name: "product 12",
-    img: "https://images.pexels.com/photos/4158/apple-iphone-smartphone-desk.jpg?auto=compress&cs=tinysrgb&w=600",
-  },
-];

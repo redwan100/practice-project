@@ -6,6 +6,7 @@ const initialPostsState = {
   isLoading: false,
   post: {},
   error: null,
+  message: null,
 };
 
 // TODO: replace http://localhost:5000/products
@@ -65,15 +66,13 @@ const PostSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(postDelete.fulfilled, (state, action) => {
-      const id = action.payload;
+      const id = action.meta.arg;
       console.log(action.payload.deletedCount);
+      console.log(action.meta.arg);
+
       state.isLoading = false;
 
-      state.posts =
-        action.deletedCount > 0
-          ? state.posts.filter((item) => item._id !== id)
-          : state.posts;
-      state.error = null;
+      state.posts = state.posts.filter((item) => item._id !== id);
     });
     builder.addCase(postDelete.rejected, (state, action) => {
       state.isLoading = false;
